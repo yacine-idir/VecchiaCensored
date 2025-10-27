@@ -16,7 +16,10 @@ Imports:
     GpGp,
     Rfast,
     Rcpp (>= 1.0.0),
+    RcppArmadillo,
     cmdstanr
-LinkingTo: Rcpp
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
 SystemRequirements: CmdStan (https://mc-stan.org/cmdstanr/articles/cmdstanr.html)
 RoxygenNote: 7.0.0
