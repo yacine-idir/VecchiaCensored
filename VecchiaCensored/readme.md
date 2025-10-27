@@ -13,7 +13,7 @@ Spatial modeling for censored and non-censored data using Vecchia approximations
 
 ```r
 # Install from GitHub
-devtools::install_github("yourusername/VecchiaCensored")
+devtools::install_github("yacine-idir/VecchiaCensored")
 
 # Install CmdStan for Bayesian models
 cmdstanr::install_cmdstan()
