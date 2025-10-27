@@ -1,33 +1,22 @@
 Package: VecchiaCensored
 Type: Package
-Title: Spatial Modeling for Censored Data Using Vecchia Approximations
+Title: Spatial Modeling with Vecchia Approximation for Censored Data
 Version: 0.1.0
-Date: 2025-01-27
-Authors@R: person("Yacine", "IDIR", 
-                  email = "yacine-epst@hotmail.com")
-Description: Efficient spatial modeling for censored and uncensored observations
-    using Vecchia approximations. Supports simple Gaussian processes (GP) and 
-    spatially varying coefficients (SVC) with both Bayesian (Stan) and frequentist 
-    inference. Handles left-censored data common in environmental monitoring.
+Author: Yacine IDIR
+Maintainer: Yacine IDIR <yacine-idir@hotmail.com>
+Description: Scalable spatial modeling for censored and non-censored observations 
+    using Vecchia approximations. Supports Gaussian Processes (GP) and Spatially 
+    Varying Coefficients (SVC) models in both Bayesian and frequentist frameworks.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: 
-    R (>= 4.0.0)
+    R (>= 3.5.0)
 Imports:
-    GpGp (>= 0.3.0),
+    GpGp,
     Rfast,
     Rcpp (>= 1.0.0),
-    RcppArmadillo
-Suggests:
-    cmdstanr,
-    testthat (>= 3.0.0),
-    knitr,
-    rmarkdown
-LinkingTo: 
-    Rcpp,
-    RcppArmadillo
-SystemRequirements: C++11, GNU make
-RoxygenNote: 7.2.3
-URL: https://github.com/yourusername/VecchiaCensored
-BugReports: https://github.com/yourusername/VecchiaCensored/issues
+    cmdstanr
+LinkingTo: Rcpp
+SystemRequirements: CmdStan (https://mc-stan.org/cmdstanr/articles/cmdstanr.html)
+RoxygenNote: 7.0.0
