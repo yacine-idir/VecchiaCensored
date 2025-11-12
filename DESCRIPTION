@@ -20,5 +20,5 @@ Imports:
 LinkingTo: 
     Rcpp,
     RcppArmadillo
-SystemRequirements: CmdStan (https://mc-stan.org/cmdstanr/articles/cmdstanr.html)
+SystemRequirements: CmdStan (https://mc-stan.org/cmdstanr/articles/cmdstanr.html), GNU make
 RoxygenNote: 7.0.0
