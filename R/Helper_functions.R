@@ -270,7 +270,7 @@ Like_SVC_nocensored_freq_Vecchia <- function(mean_parameters,
   
   # extract the covariate block used in the SVC‐covariance
   X_svc <- X_obs[, svc_indices, drop = FALSE]
-  sourceCpp("sparse_start.cpp")
+  #sourceCpp("sparse_start.cpp")
   # build Cholesky of the precision: Λ = L %*% t(L)
   L <- precision_decomp_sparse(cov_parameters, X_svc, NN, locs_obs)
   
@@ -369,7 +369,7 @@ prediction_freq=function(beta,sigma,phi,tau,M,Y_obs,X_obs,locs_obs,svc_indices,c
     
     
     # build Cholesky of the precision: Λ = L %*% t(L)
-    sourceCpp("sparse_start.cpp")
+    #sourceCpp("sparse_start.cpp")
     L <-t( precision_decomp_sparse(cov_list, X_svc, NN, ALL_locs_obs_ordered,n_n_cen+1))
     
     y_cens_pred <- X_obs_cen %*% beta - forwardsolve(
@@ -451,7 +451,7 @@ prediction_freq=function(beta,sigma,phi,tau,M,Y_obs,X_obs,locs_obs,svc_indices,c
   }
   
   
-  sourceCpp("sparse_start.cpp")
+  #sourceCpp("sparse_start.cpp")
   L <- t(precision_decomp_sparse(cov_list, X_svc, NN, ALL_locs_ordered,n_obs+1))
   
   prediction <- X_pred[ord_pred,] %*% beta - forwardsolve(
