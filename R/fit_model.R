@@ -134,7 +134,7 @@ fit_model <- function(Y_obs, locs_obs, X_obs = NULL, svc_indices = NULL,
     } else {
       # ---- SVC fréquentiste censuré ----
       # source("fonctions_censored_freq.R")
-      sourceCpp("sparse_start.cpp")
+      #sourceCpp("sparse_start.cpp")
       
       model <- fit_censored_freq_Vecchia(Y_obs = Y_obs, locs_obs = locs_obs, 
                                          X_obs = X_obs, M = M, svc_indices = svc_indices, 
