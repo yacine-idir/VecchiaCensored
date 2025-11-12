@@ -584,21 +584,20 @@ fit_censored_freq_Vecchia <- function(Y_obs, locs_obs, X_obs, M, svc_indices,
     # Construct list of covariance blocks
     cov_list <- vector("list", n_svc + 1)
     
+    # In the objective function:
     if (fixed_range && n_svc > 1) {
-      # Extract shared phi (second to last parameter)
       phi_shared <- cov_par[n_svc + 1]
       
       for (i in seq_len(n_svc)) {
         cov_list[[i]] <- c(sigma_sq = cov_par[i], phi = phi_shared)
       }
-      cov_list$nugget <- c(nugget = cov_par[length(cov_par)])
+      cov_list$nugget <- cov_par[length(cov_par)]  # Remove the c(nugget = ...)
     } else {
-      # Standard: every two elements correspond to one svc component
       for (i in seq_len(n_svc)) {
         idx <- (2 * (i - 1) + 1):(2 * i)
         cov_list[[i]] <- c(sigma_sq = cov_par[idx[1]], phi = cov_par[idx[2]])
       }
-      cov_list$nugget <- c(nugget = cov_par[length(cov_par)])
+      cov_list$nugget <- cov_par[length(cov_par)]  # Remove the c(nugget = ...)
     }
     
     ll <- Like_SVC_censored_freq_Vecchia(mean_par, cov_list, all_Y, all_locs, all_X, 
@@ -639,6 +638,7 @@ fit_censored_freq_Vecchia <- function(Y_obs, locs_obs, X_obs, M, svc_indices,
     message = opt$message
   ))
 }
+
 
 
 Like_SVC_censored_freq_Vecchia <- function(mean_parameters, cov_parameters, Y_obs, 
